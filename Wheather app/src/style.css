@@ -1,0 +1,164 @@
+.container {
+  padding: 30px auto 0;
+  border: thick double teal;
+  margin: 30px auto 5px;
+  border-radius: 30px;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(161, 255, 206) 0%,
+    rgb(250, 255, 209) 90%
+  );
+  max-width: 1000px;
+}
+
+.motto,
+button,
+.city-day-line,
+.citySearch,
+.currentWeather,
+.forecastDay,
+.forecastMin-maxTemp {
+  font-family: "Pangolin", cursive;
+}
+
+.motto {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 26px;
+  color: rgb(231, 131, 114);
+  font-weight: 500;
+}
+
+.citySearch {
+  margin: 10px auto 10px 45px;
+}
+
+button {
+  border-radius: 10px;
+  background-color: rgb(231, 131, 114);
+  color: white;
+  padding: 5px;
+  border: 1px solid rgb(231, 131, 114);
+}
+
+.frame {
+  margin: 0 25px;
+}
+
+.currentWeather {
+  margin: 20px 0 0 25px;
+}
+
+.city-day-line {
+  display: block;
+  text-align: left;
+  color: rgb(17, 17, 78);
+  font-size: 22px;
+  line-height: 80%;
+  padding: 25px 0 0 0;
+}
+
+ul {
+  list-style: none;
+  display: inline;
+  text-align: center;
+}
+
+.todayData {
+  border-radius: 50%;
+  border-top-left-radius: 50% 50%;
+  border-top-left-radius: 50% 50%;
+  border-bottom-right-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
+  border: 2px solid teal;
+  border-left-style: solid;
+  border-right-style: solid;
+  /* border-left-width: 2px;
+  border-right-width: 2px;
+  border-top-width: 2px; */
+  border-top-style: solid;
+
+  text-align: center;
+  position: relative;
+}
+
+.enteredCity {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.currentTemp {
+  font-size: xx-large;
+}
+
+.tempConversion {
+  color: black;
+  text-decoration: none;
+}
+
+.tempConversion:hover {
+  cursor: pointer;
+}
+.currentIcon {
+  width: 100px;
+  margin: 0 auto;
+}
+
+.currentDescription,
+.currentMinMax {
+  font-size: 18px;
+  color: rgb(75, 74, 74);
+}
+
+.sunrise {
+  position: relative;
+  top: -110px;
+  right: -230px;
+}
+
+.sunset {
+  position: relative;
+  top: -135px;
+  right: -630px;
+}
+
+.sunIcon {
+  width: 30px;
+}
+
+.rainWindData {
+  display: block;
+  list-style: none;
+  text-align: left;
+  padding: 25px 0 0 100px;
+}
+
+.windIcon,
+.rainIcon {
+  width: 50px;
+}
+
+.weatherForecast {
+  display: block;
+  text-align: center;
+  line-height: 70%;
+}
+
+.forecastDay {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.forecastIcon {
+  width: 90px;
+  padding: -10px 0 0 0;
+}
+
+footer {
+  display: block;
+  text-align: center;
+  font-family: monospace;
+  font-size: small;
+  color: rgb(167, 163, 163);
+}

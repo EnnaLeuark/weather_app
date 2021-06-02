@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🌦 Weather App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/ef3924432f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <p class="motto">"There is no bad weather, just wrong clothes."</p>
+      <form class="row row-cols-lg-auto g-3 align-items-center citySearch">
+        <div class="col-12">
+          <label
+            class="visually-hidden labelCity"
+            for="inlineFormInputEnterCity"
+            >Enter your city</label
+          >
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control citySearch"
+              id="inlineFormInputGroupUsername"
+              placeholder="Weather in ..."
+            />
+          </div>
+        </div>
+        <div class="col-12">
+          <button>Search</button>
+          <button id="currentLocationButton">my location</button>
+        </div>
+      </form>
+      <div class="frame">
+        <div class="currentWeather">
+          <div class="row">
+            <div class="col-4">
+              <div class="city-day-line">
+                <p class="cityName">Potsdam</p>
+                <p>
+                  <i class="far fa-calendar-alt"></i
+                  ><span id="currentDate">05.05.2021</span>
+                </p>
+                <p class="dayTime">
+                  <i class="far fa-clock"></i
+                  ><span id="currentTime">10:30</span>
+                </p>
+              </div>
+            </div>
+            <div class="col-4 todayData">
+              <ul>
+                <li>
+                  <div class="currentTemp">
+                    <span id="degreeTemp">9</span
+                    ><a class="tempConversion" id="CelsiusLink">°C</a>
+                    <!--  |<span
+                      class="tempConversion"
+                      ><a id="FahrenheitLink">°F</a></span
+                    > -->
+                    <img
+                      class="currentIcon"
+                      src="images/sun+sunny+weather+icon-1320196635525068067_0.svg"
+                      alt="weather icon"
+                    />
+                  </div>
+                </li>
+                <li id="currentDescription">slightly cloudy</li>
+                <li>
+                  <span class="currentMinMax">
+                    Min
+                    <span id="currentTemp_min">7°C -</span>
+                    Max
+                    <span id="currentTemp_max">11°C</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div class="col-4">
+              <ul class="rainWindData">
+                <li>
+                  <img
+                    src="images/forecast+rain+umbrella+weather+icon-1320183238770199064_0.svg"
+                    alt="umbrella icon"
+                    class="rainIcon"
+                  />75%
+                </li>
+                <li>
+                  <img
+                    src="images/weather+windy+icon-1320196485715795495_0.svg"
+                    class="windIcon"
+                    alt="wind icon"
+                  /><span id="windspeed">37 </span>m/s
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="sunrise">
+          <img
+            src="images/sun+sunset+weather+icon-1320196636209475292_0.svg"
+            class="sunIcon"
+            alt="sunrise icon"
+          /><span>05:43</span>
+        </div>
+        <div class="sunset">
+          <img
+            src="images/sun+sunset+weather+icon-1320196636209475292_0.svg"
+            class="sunIcon"
+            alt="sunrise icon"
+          /><span>21:51</span>
+        </div>
+        <div class="weatherForecast">
+          <div class="row">
+            <div class="col-2">
+              <p class="forecastDay">Mon</p>
+              <img
+                class="forecastIcon"
+                src="images/cloudy+forecast+rain+weather+icon-1320196634592211825_0.svg"
+                alt="cloudy icon"
+              />
+              <p class="forecastMin-maxTemp">8°C/15°C</p>
+            </div>
+            <div class="col-2">
+              <p class="forecastDay">Tue</p>
+              <img
+                src="images/drizzel+rain+weather+icon-1320196635901648252_0.svg"
+                alt="rain icon"
+                class="forecastIcon"
+              />
+              <p class="forecastMin-maxTemp">6°C/11°C</p>
+            </div>
+            <div class="col-2">
+              <p class="forecastDay">Wed</p>
+              <img
+                src="images/sun+sunny+weather+icon-1320196635525068067_0.svg"
+                alt="sun icon"
+                class="forecastIcon"
+              />
+              <p class="forecastMin-maxTemp">10°C/16°C</p>
+            </div>
+            <div class="col-2">
+              <p class="forecastDay">Thu</p>
+              <img
+                src="images/sunny+temperature+weather+icon-1320196637430890623_0.svg"
+                alt="sun icon"
+                class="forecastIcon"
+              />
+              <p class="forecastMin-maxTemp">12°C/18°C</p>
+            </div>
+            <div class="col-2">
+              <p class="forecastDay">Fri</p>
+              <img
+                src="images/storm+weather+wind+windy+icon-1320196635706326668_0.svg"
+                alt="sun icon"
+                class="forecastIcon"
+              />
+              <p class="forecastMin-maxTemp">11°C/14°C</p>
+            </div>
+            <div class="col-2">
+              <p class="forecastDay">Sat</p>
+              <img
+                src="images/clouds+cloudy+weather+icon-1320196635828207342_0.svg"
+                alt="cloud icon"
+                class="forecastIcon"
+              />
+              <p class="forecastMin-maxTemp">9°C/13°C</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>Coded by Anne Krauel, Hosted with Netlify</p>
+    </footer>
+    <script src="src/script.js"></script>
+  </body>
+</html>
