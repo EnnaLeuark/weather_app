@@ -1,6 +1,9 @@
 // current date
 let now = new Date();
 let day = now.getUTCDate();
+if (day < 10) {
+  day = `0${day}`;
+}
 let months = [
   "01",
   "02",
