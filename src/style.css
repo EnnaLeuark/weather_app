@@ -16,9 +16,13 @@ button,
 .city-day-line,
 .citySearch,
 .currentWeather,
+.tempConversion,
+#degreeTemp,
 .forecastDay,
 .forecastMin-maxTemp {
   font-family: "Pangolin", cursive;
+  color: black;
+  /* color: rgb(17, 17, 78); */
 }
 
 .motto {
@@ -53,7 +57,6 @@ button {
 .city-day-line {
   display: block;
   text-align: left;
-  color: rgb(17, 17, 78);
   font-size: 22px;
   line-height: 80%;
   padding: 25px 0 0 0;
@@ -108,7 +111,6 @@ ul {
 .currentDescription,
 .currentMinMax {
   font-size: 16px;
-  color: rgb(75, 74, 74);
 }
 
 .sunrise {
