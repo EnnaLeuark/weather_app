@@ -36,7 +36,7 @@
           <div class="input-group">
             <input
               type="text"
-              class="form-control citySearch"
+              class="form-control"
               id="inlineFormInputGroupUsername"
               placeholder="Weather in ..."
             />
@@ -44,7 +44,10 @@
         </div>
         <div class="col-12">
           <button>Search</button>
-          <button id="currentLocationButton">my location</button>
+          <button id="currentLocationButton">
+            <i class="fas fa-location-arrow"></i>
+          </button>
+          <div class="col-3"></div>
         </div>
       </form>
       <div class="frame">
@@ -65,6 +68,7 @@
             </div>
             <div class="col-4 todayData">
               <ul>
+                <li></li>
                 <li>
                   <div class="currentTemp">
                     <span id="degreeTemp">9</span
@@ -75,12 +79,15 @@
                     > -->
                     <img
                       class="currentIcon"
+                      id="currentIcon"
                       src="images/sun+sunny+weather+icon-1320196635525068067_0.svg"
                       alt="weather icon"
                     />
                   </div>
                 </li>
+
                 <li id="currentDescription">slightly cloudy</li>
+
                 <li>
                   <span class="currentMinMax">
                     Min
@@ -92,26 +99,26 @@
               </ul>
             </div>
             <div class="col-4">
-              <ul class="rainWindData">
-                <li>
-                  <img
-                    src="images/forecast+rain+umbrella+weather+icon-1320183238770199064_0.svg"
-                    alt="umbrella icon"
-                    class="rainIcon"
-                  />75%
-                </li>
-                <li>
-                  <img
-                    src="images/weather+windy+icon-1320196485715795495_0.svg"
-                    class="windIcon"
-                    alt="wind icon"
-                  /><span id="windspeed">37 </span>m/s
-                </li>
-              </ul>
+              <div class="row">
+                <div class="col-6 additionalData_text">
+                  <ul>
+                    <li>Feels like:</li>
+                    <li>Windspeed:</li>
+                    <li>Humidity:</li>
+                  </ul>
+                </div>
+                <div class="col-6 additionalData_values">
+                  <ul>
+                    <li><span id="feelsLike"> 30 </span>°C</li>
+                    <li><span id="windspeed">37 </span>m/s</li>
+                    <li><span id="humidity">45 </span>%</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="sunrise">
+        <!-- <div class="sunrise">
           <img
             src="images/sun+sunset+weather+icon-1320196636209475292_0.svg"
             class="sunIcon"
@@ -124,7 +131,7 @@
             class="sunIcon"
             alt="sunrise icon"
           /><span>21:51</span>
-        </div>
+        </div> -->
         <div class="weatherForecast">
           <div class="row">
             <div class="col-2">
@@ -187,10 +194,12 @@
     </div>
     <footer>
       <p>
+        This project was coded by Anne Krauel and is
         <a href="https://github.com/EnnaLeuark/weather_app" target="_blank"
-          >Open Source Code</a
+          >open-sourced on GitHub</a
         >
-        by Anne Krauel
+        and hosted on
+        <a href="https://infallible-tereshkova-0fcc2d.netlify.app/">Netlify</a>
       </p>
     </footer>
     <script src="src/script.js"></script>
