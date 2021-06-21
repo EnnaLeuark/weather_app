@@ -55,15 +55,28 @@ button {
 }
 
 .currentWeather {
-  margin: 20px 0 0 25px;
+  margin: 20px 0 25px;
 }
 
 .city-day-line {
   display: block;
   text-align: left;
-  font-size: 18px;
-  line-height: 80%;
+  line-height: 50%;
   padding: 25px 0 0 0;
+}
+
+.cityName {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.currentDay,
+.currentTime {
+  font-size: 16px;
+}
+
+.lastUpdated {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 ul {
@@ -113,9 +126,10 @@ ul {
   margin: -5px auto;
 }
 
-.currentDescription,
+#currentDescription,
 .currentMinMax {
   font-size: 16px;
+  margin-top: 0;
 }
 
 .sunrise {
