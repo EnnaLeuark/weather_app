@@ -103,8 +103,8 @@ function showWeather(response) {
     );
     feelsLike.innerHTML = `${feelsLikeTemp} °F`;
     let wind = document.querySelector("#windspeed");
-    let showWind = Math.round(response.data.wind.speed * 2.237);
-    wind.innerHTML = `${showWind} Miles/Hr`;
+    let showWind = Math.round(response.data.wind.speed * 0.62137);
+    wind.innerHTML = `${showWind} mph`;
   });
 
   //Convert to Celsius
@@ -159,7 +159,7 @@ function changeCity(event) {
 let city = document.querySelector("button");
 city.addEventListener("click", changeCity);
 
-// Bonus Feature: Current Location button
+//Current Location button
 
 function showPositionWeather(position) {
   let lat = position.coords.latitude;
