@@ -30,7 +30,7 @@ button,
   text-align: center;
   margin-top: 10px;
   font-size: 26px;
-  color: rgb(231, 131, 114);
+  color: rgb(148, 139, 139);
   font-weight: 500;
 }
 
@@ -38,12 +38,8 @@ button,
   margin: 0 25px;
 }
 
-button {
-  border-radius: 10px;
-  background-color: rgb(231, 131, 114);
-  color: white;
-  padding: 5px;
-  border: 1px solid rgb(231, 131, 114);
+.form-control {
+  max-width: 350px;
 }
 
 #currentLocationButton {
@@ -61,18 +57,23 @@ button {
 .city-day-line {
   display: block;
   text-align: left;
-  line-height: 50%;
+  line-height: 0.6;
   padding: 25px 0 0 0;
 }
 
-.cityName {
-  font-weight: bold;
-  font-size: 18px;
+.cityName,
+#degreeTemp {
+  font-weight: normal;
+  font-size: 28px;
+}
+
+#degreeTemp {
+  line-height: 1;
 }
 
 .currentDay,
 .currentTime {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .lastUpdated {
@@ -86,26 +87,37 @@ ul {
 }
 
 .todayData {
-  border-radius: 50%;
-  border-top-left-radius: 50% 50%;
-  border-top-left-radius: 50% 50%;
-  border-bottom-right-radius: 50% 50%;
-  border-bottom-left-radius: 50% 50%;
-  border: 2px solid teal;
-  border-left-style: solid;
-  border-right-style: solid;
-  /* border-left-width: 2px;
-  border-right-width: 2px;
-  border-top-width: 2px; */
-  border-top-style: solid;
-
   text-align: center;
   position: relative;
 }
 
-.enteredCity {
-  font-size: 26px;
-  font-weight: 600;
+.unitC {
+  border-radius: 35px 0px 0px 35px;
+}
+
+.unitF {
+  border-radius: 0px 35px 35px 0px;
+}
+
+.unitC,
+.unitF {
+  background-color: none;
+  color: grey;
+  box-shadow: 1px 1px 2px rgb(128, 128, 128);
+  border: 1px solid rgb(66, 122, 66);
+  position: relative;
+  top: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.half-circle {
+  width: 200px;
+  height: 100px; /* as the half of the width */
+  background-color: none;
+  border-top-left-radius: 110px; /* 100px of height + 10px of border */
+  border-top-right-radius: 110px; /* 100px of height + 10px of border */
+  border: 1px solid gray;
+  border-bottom: 0;
 }
 
 .currentTemp {

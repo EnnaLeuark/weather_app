@@ -26,36 +26,50 @@
   <body>
     <div class="container">
       <p class="motto">"There is no bad weather, just wrong clothes."</p>
-      <form class="row row-cols-lg-auto g-3 align-items-center citySearch">
-        <div class="col-12">
-          <label
-            class="visually-hidden labelCity"
-            for="inlineFormInputEnterCity"
-            >Enter your city</label
-          >
-          <div class="input-group">
-            <input
-              type="text"
-              class="form-control"
-              id="inlineFormInputGroupUsername"
-              placeholder="Weather in ..."
-            />
-          </div>
-        </div>
-        <div class="col-12">
-          <button>Search</button>
-          <button id="currentLocationButton">
-            <i class="fas fa-location-arrow"></i>
-          </button>
-          <div class="col-3"></div>
-        </div>
-      </form>
+      <div class="input-group CitySearch">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Weather in"
+          aria-label="Weather in with two button addons"
+        />
+        <button class="btn btn-outline-secondary" type="button">Search</button>
+        <button
+          class="btn btn-outline-secondary"
+          id="currentLocationButton"
+          type="button"
+        >
+          <i class="fas fa-location-arrow"></i>
+        </button>
+      </div>
       <div class="frame">
         <div class="currentWeather">
           <div class="row">
             <div class="col-4">
               <div class="city-day-line">
                 <p class="cityName">Potsdam</p>
+                <div class="currentTemp">
+                  <div class="row">
+                    <div class="col-7">
+                      <span id="degreeTemp">9</span
+                      ><a class="tempConversion" id="currentUnit"></a>
+                    </div>
+                    <div class="col-5">
+                      <span class="unitButtons">
+                        <span>
+                          <a href="#" class="unitC" id="celsiusLink">
+                            °C
+                          </a></span
+                        >
+                        <span
+                          ><a href="#" class="unitF" id="fahrenheitLink">
+                            °F
+                          </a></span
+                        ></span
+                      >
+                    </div>
+                  </div>
+                </div>
                 <p class="lastUpdated">last updated</p>
                 <p>
                   <i class="far fa-calendar-alt"></i
@@ -67,33 +81,24 @@
                 </p>
               </div>
             </div>
-            <div class="col-4 todayData">
+            <div class="col-4 todayData half-circle">
               <ul>
                 <li></li>
                 <li>
-                  <div class="currentTemp">
-                    <span id="degreeTemp">9</span
-                    ><a class="tempConversion" id="CelsiusLink">°C</a>
-                    <!--  |<span
-                      class="tempConversion"
-                      ><a id="FahrenheitLink">°F</a></span
-                    > -->
-                    <img
-                      class="currentIcon"
-                      id="currentIcon"
-                      src="images/sun+sunny+weather+icon-1320196635525068067_0.svg"
-                      alt="weather icon"
-                    />
-                  </div>
+                  <img
+                    class="currentIcon"
+                    id="currentIcon"
+                    src="images/sun+sunny+weather+icon-1320196635525068067_0.svg"
+                    alt="weather icon"
+                  />
                 </li>
                 <li id="currentDescription">slightly cloudy</li>
 
                 <li>
                   <span class="currentMinMax">
-                    Min
-                    <span id="currentTemp_min">7°C -</span>
-                    Max
-                    <span id="currentTemp_max">11°C</span>
+                    <span id="currentTemp_min">7°</span>
+                    /
+                    <span id="currentTemp_max">11°</span>
                   </span>
                 </li>
               </ul>
@@ -103,35 +108,35 @@
                 <div class="col-6 additionalData_text">
                   <ul>
                     <li>Feels like:</li>
-                    <li>Windspeed:</li>
                     <li>Humidity:</li>
+                    <li>Windspeed:</li>
                   </ul>
                 </div>
                 <div class="col-6 additionalData_values">
                   <ul>
-                    <li><span id="feelsLike"> 30 </span>°C</li>
-                    <li><span id="windspeed">37 </span>m/s</li>
-                    <li><span id="humidity">45 </span>%</li>
+                    <li><span id="feelsLike">30</span></li>
+                    <li><span id="humidity">45</span></li>
+                    <li><span id="windspeed">37</span></li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- <div class="sunrise">
+        <div class="sunrise">
           <img
             src="images/sun+sunset+weather+icon-1320196636209475292_0.svg"
             class="sunIcon"
             alt="sunrise icon"
-          /><span>05:43</span>
+          /><br /><span>05:43</span>
         </div>
         <div class="sunset">
           <img
             src="images/sun+sunset+weather+icon-1320196636209475292_0.svg"
             class="sunIcon"
             alt="sunrise icon"
-          /><span>21:51</span>
-        </div> -->
+          /><br /><span>21:51</span>
+        </div>
         <div class="weatherForecast">
           <div class="row">
             <div class="col-2">

@@ -53,13 +53,15 @@ function showWeather(response) {
   let tempMax = Math.round(response.data.main.temp_max);
 
   let temperatureElement = document.querySelector("#degreeTemp");
-  temperatureElement.innerHTML = temperature;
+  temperatureElement.innerHTML = `${temperature}°C`;
   let tempMinElement = document.querySelector("#currentTemp_min");
-  tempMinElement.innerHTML = `${tempMin}°C`;
+  tempMinElement.innerHTML = `${tempMin}°`;
   let tempMaxElement = document.querySelector("#currentTemp_max");
-  tempMaxElement.innerHTML = `${tempMax}°C`;
+  tempMaxElement.innerHTML = `${tempMax}°`;
   let location = document.querySelector(".cityName");
-  location.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
+  location.innerHTML =
+    `${response.data.name}, ${response.data.sys.country}`.toUpperCase();
+
   let IconElement = document.querySelector("#currentIcon");
   IconElement.setAttribute(
     "src",
@@ -76,18 +78,47 @@ function showWeather(response) {
   let feelsLike = Math.round(response.data.main.feels_like);
 
   let feelsLikeElement = document.querySelector("#feelsLike");
-  feelsLikeElement.innerHTML = feelsLike;
+  feelsLikeElement.innerHTML = `${feelsLike}°C`;
 
   //Humidity
   let Humidity = response.data.main.humidity;
   let HumidityElement = document.querySelector("#humidity");
-  HumidityElement.innerHTML = ` ${Humidity} `;
+  HumidityElement.innerHTML = ` ${Humidity} %`;
 
   //windspeed
-  let windspeed = Math.round(response.data.wind.speed);
+  let windspeed = Math.round(response.data.wind.speed * 3.6);
   let windElement = document.querySelector("#windspeed");
-  windElement.innerHTML = `${windspeed} `;
+  windElement.innerHTML = `${windspeed} km/h `;
   console.log(response);
+
+  //convert to Fahrenheit
+  let fahrenheitTemp = document.querySelector("#fahrenheitLink");
+  fahrenheitTemp.addEventListener("click", function displayFahrenheitTemp() {
+    let fahrenheitTemperature = Math.round((temperature * 9) / 5 + 32);
+    let displayTemperature = document.querySelector("#degreeTemp");
+    displayTemperature.innerHTML = `${fahrenheitTemperature}°F`;
+    let feelsLike = document.querySelector("#feelsLike");
+    let feelsLikeTemp = Math.round(
+      (response.data.main.feels_like * 9) / 5 + 32
+    );
+    feelsLike.innerHTML = `${feelsLikeTemp} °F`;
+    let wind = document.querySelector("#windspeed");
+    let showWind = Math.round(response.data.wind.speed * 2.237);
+    wind.innerHTML = `${showWind} Miles/Hr`;
+  });
+
+  //Convert to Celsius
+  let celsiusTemp = document.querySelector("#celsiusLink");
+  celsiusTemp.addEventListener("click", function displayCelsiusTemp() {
+    let displayTemperature = document.querySelector("#degreeTemp");
+    displayTemperature.innerHTML = `${temperature}°C`;
+    let feelsLike = document.querySelector("#feelsLike");
+    let feelsLikeTemp = Math.round(response.data.main.feels_like);
+    feelsLike.innerHTML = `${feelsLikeTemp} °C`;
+    let wind = document.querySelector("#windspeed");
+    let showWind = Math.round(response.data.wind.speed * 3.6);
+    wind.innerHTML = `${showWind} km/h`;
+  });
 }
 
 //current Temperature in Potsdam
@@ -132,22 +163,20 @@ LocationButton.addEventListener("click", getCurrentPosition);
   event.preventDefault();
   let temperatureElement = document.querySelector("#degreeTemp");
   //temperatureElement.innerHTML = "48";
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+  let fahrenheitTemp = (temperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = `${fahrenheitTemp}°F`;
 }
 
-let temperature = document.querySelector("#FahrenheitLink");
+let temperature = document.querySelector("#fahrenheitLink");
 temperature.addEventListener("click", displayFahrenheitTemp);
 
 // Fahrenheit to Celsius
 //°F = °C * 1,8 + 32 (von Celsius nach Fahrenheit)
-function convertToCelsius(event) {
+function displayCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#degreeTemp");
   temperatureElement.innerHTML = "9";
 }
 
 let celsius = document.querySelector("#CelsiusLink");
-celsius.addEventListener("click", convertToCelsius); */
+celsius.addEventListener("click", displayCelsiusTemp); */
