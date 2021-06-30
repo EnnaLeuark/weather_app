@@ -103,7 +103,7 @@ function showWeather(response) {
     );
     feelsLike.innerHTML = `${feelsLikeTemp} °F`;
     let wind = document.querySelector("#windspeed");
-    let showWind = Math.round(response.data.wind.speed * 0.62137);
+    let showWind = Math.round(response.data.wind.speed * 2.237);
     wind.innerHTML = `${showWind} mph`;
   });
 
