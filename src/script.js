@@ -147,9 +147,9 @@ axios(`${apiURL}Potsdam&appid=${apiKey}&units=metric`).then(showWeather);
 //City Search and change of Temperature
 function changeCity(event) {
   event.preventDefault();
-  let cityInput = document.querySelector("#inlineFormInputGroupUsername");
+  let cityInput = document.querySelector("#cityInput");
   let newCity = document.querySelector(".cityName");
-  newCity.innerHTML = cityInput.value;
+  newCity.innerHTML = cityInput.value.toUpperCase();
 
   axios(`${apiURL}${cityInput.value}&appid=${apiKey}&units=metric`).then(
     showWeather
