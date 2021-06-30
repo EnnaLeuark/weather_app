@@ -35,7 +35,7 @@ if (min < 10) {
 }
 
 let currentTime = document.querySelector("#currentTime");
-currentTime.innerHTML = ` ${hour}:${min} (CET)`;
+currentTime.innerHTML = ` ${hour}:${min}`;
 
 // City Search & current Temperature
 let apiKey = "689f4f9c85431deeb4c8640074154109";

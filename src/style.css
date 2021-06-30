@@ -35,9 +35,8 @@ button,
 }
 
 .citySearch {
-  margin: 0 auto;
+  margin: 25px 0;
   position: relative;
-  right: 100px;
 }
 
 .form-control {
@@ -172,7 +171,7 @@ ul {
 .additionalData_text,
 .additionalData_values {
   width: 50%;
-  position: relative;
+  margin-top: 25px;
 }
 
 .additionalData_text {
