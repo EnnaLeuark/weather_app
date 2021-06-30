@@ -119,6 +119,26 @@ function showWeather(response) {
     let showWind = Math.round(response.data.wind.speed * 3.6);
     wind.innerHTML = `${showWind} km/h`;
   });
+
+  // time of sunrise and sunset
+  function formatTime(timestamp) {
+    let time = new Date(timestamp);
+    let hours = time.getHours();
+    if (hours < 10) {
+      hours = `0${hours}`;
+    }
+    let minutes = time.getMinutes();
+    if (minutes < 10) {
+      minutes = `0${minutes}`;
+    }
+    return `${hours}:${minutes}`;
+  }
+
+  let sunrise = document.querySelector("#sunriseTime");
+  sunrise.innerHTML = formatTime(response.data.sys.sunrise * 1000);
+
+  let sunset = document.querySelector("#sunsetTime");
+  sunset.innerHTML = formatTime(response.data.sys.sunset * 1000);
 }
 
 //current Temperature in Potsdam
@@ -156,27 +176,3 @@ function getCurrentPosition(event) {
 
 let LocationButton = document.querySelector("#currentLocationButton");
 LocationButton.addEventListener("click", getCurrentPosition);
-
-//Celsius to Fahrenheit Conversion
-//°C = (°F - 32) * 5/9 (von Fahrenheit in Celsius)
-/* function displayFahrenheitTemp(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#degreeTemp");
-  //temperatureElement.innerHTML = "48";
-  let fahrenheitTemp = (temperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = `${fahrenheitTemp}°F`;
-}
-
-let temperature = document.querySelector("#fahrenheitLink");
-temperature.addEventListener("click", displayFahrenheitTemp);
-
-// Fahrenheit to Celsius
-//°F = °C * 1,8 + 32 (von Celsius nach Fahrenheit)
-function displayCelsius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#degreeTemp");
-  temperatureElement.innerHTML = "9";
-}
-
-let celsius = document.querySelector("#CelsiusLink");
-celsius.addEventListener("click", displayCelsiusTemp); */

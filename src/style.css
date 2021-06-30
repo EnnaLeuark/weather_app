@@ -35,7 +35,9 @@ button,
 }
 
 .citySearch {
-  margin: 0 25px;
+  margin: 0 auto;
+  position: relative;
+  right: 100px;
 }
 
 .form-control {
@@ -80,15 +82,11 @@ button,
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-ul {
-  list-style: none;
-  display: inline;
-  text-align: center;
-}
-
 .todayData {
   text-align: center;
   position: relative;
+  list-style: none;
+  display: inline;
 }
 
 .unitC {
@@ -106,8 +104,15 @@ ul {
   box-shadow: 1px 1px 2px rgb(128, 128, 128);
   border: 1px solid rgb(66, 122, 66);
   position: relative;
-  top: 20px;
+  top: 10px;
   transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.unitC:hover,
+.unitF:hover {
+  background-color: rgb(118, 196, 156);
+  color: black;
 }
 
 .half-circle {
@@ -146,28 +151,32 @@ ul {
 
 .sunrise {
   position: relative;
-  top: -110px;
-  right: -180px;
+  top: -100px;
+  right: -220px;
 }
 
 .sunset {
   position: relative;
-  top: -135px;
-  right: -490px;
+  top: -155px;
+  right: -420px;
 }
 
 .sunIcon {
   width: 30px;
 }
 
+ul {
+  list-style: none;
+}
+
 .additionalData_text,
 .additionalData_values {
-  list-style: none;
   width: 50%;
-  display: block;
+  position: relative;
 }
 
 .additionalData_text {
+  display: block;
   text-align: right;
 }
 
