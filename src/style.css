@@ -13,13 +13,15 @@
 
 .motto,
 button,
-.city-day-line,
+.currentTimeDate,
 .citySearch,
 .currentWeather,
 .tempConversion,
 #degreeTemp,
 .forecastDay,
-.forecastMin-maxTemp {
+.forecastMin-maxTemp,
+.cityName,
+.lastUpdated {
   font-family: "Pangolin", cursive;
   color: black;
   /* color: rgb(17, 17, 78); */
@@ -35,8 +37,8 @@ button,
 }
 
 .citySearch {
-  margin: 25px 0;
   position: relative;
+  margin-left: 25px;
 }
 
 .form-control {
@@ -51,34 +53,35 @@ button,
   margin: 0 25px;
 }
 
-.currentWeather {
-  margin: 20px 0 25px;
-}
-
-.city-day-line {
-  display: block;
-  text-align: left;
-  line-height: 0.6;
-  padding: 25px 0 0 0;
-}
-
-.cityName,
-#degreeTemp {
-  font-weight: normal;
+.cityName {
+  margin: 15px 0;
   font-size: 24px;
 }
 
+.currentWeather {
+  margin: 0 0 25px;
+}
+
 #degreeTemp {
-  line-height: 1;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 2;
+  margin-bottom: 3px;
+  text-align: center;
+  display: block;
 }
 
-.currentDay,
-.currentTime {
-  font-size: 14px;
+.currentTimeDate {
+  display: block;
+  text-align: left;
+  line-height: 80%;
+  padding: 0;
+  font-size: 14;
 }
 
-.lastUpdated {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+#currentTime,
+#currentDate {
+  text-indent: 15px;
 }
 
 .todayData {
@@ -150,13 +153,13 @@ button,
 
 .sunrise {
   position: relative;
-  top: -100px;
+  top: -65px;
   right: -220px;
 }
 
 .sunset {
   position: relative;
-  top: -155px;
+  top: -118px;
   right: -420px;
 }
 
@@ -179,8 +182,9 @@ ul {
   text-align: right;
 }
 
-.additionalData_values {
+.additionalData_values ul {
   text-align: left;
+  padding: 0;
 }
 
 .weatherForecast {

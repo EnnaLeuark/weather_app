@@ -26,52 +26,60 @@
   <body>
     <div class="container">
       <p class="motto">"There is no bad weather, just wrong clothes."</p>
-      <div class="input-group CitySearch">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Weather in"
-          id="cityInput"
-          aria-label="Weather in with two button addons"
-        />
-        <button class="btn btn-outline-secondary" type="button">Search</button>
-        <button
-          class="btn btn-outline-secondary"
-          id="currentLocationButton"
-          type="button"
-        >
-          <i class="fas fa-location-arrow"></i>
-        </button>
+      <div class="row">
+        <div class="col-12">
+          <div class="input-group citySearch">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Weather in"
+              id="cityInput"
+              aria-label="Weather in with two button addons"
+            />
+            <button class="btn btn-outline-secondary" type="button">
+              Search
+            </button>
+            <button
+              class="btn btn-outline-secondary"
+              id="currentLocationButton"
+              type="button"
+            >
+              <i class="fas fa-location-arrow"></i>
+            </button>
+          </div>
+        </div>
       </div>
       <div class="frame">
+        <div class="cityName">
+          <p>Potsdam</p>
+        </div>
         <div class="currentWeather">
           <div class="row">
             <div class="col-4">
-              <div class="city-day-line">
-                <p class="cityName">Potsdam</p>
-                <div class="currentTemp">
-                  <div class="row">
-                    <div class="col-7">
-                      <span id="degreeTemp">9</span
-                      ><a class="tempConversion" id="currentUnit"></a>
-                    </div>
-                    <div class="col-5">
-                      <span class="unitButtons">
-                        <span>
-                          <a href="#" class="unitC" id="celsiusLink">
-                            °C
-                          </a></span
-                        >
-                        <span
-                          ><a href="#" class="unitF" id="fahrenheitLink">
-                            °F
-                          </a></span
-                        ></span
+              <div class="currentTemp">
+                <div class="row">
+                  <div class="col-7">
+                    <span id="degreeTemp">9</span
+                    ><a class="tempConversion" id="currentUnit"></a>
+                  </div>
+                  <div class="col-5">
+                    <span class="unitButtons">
+                      <span>
+                        <a href="#" class="unitC" id="celsiusLink">
+                          °C
+                        </a></span
                       >
-                    </div>
+                      <span
+                        ><a href="#" class="unitF" id="fahrenheitLink">
+                          °F
+                        </a></span
+                      ></span
+                    >
                   </div>
                 </div>
-                <p class="lastUpdated">last updated</p>
+              </div>
+              <div class="currentTimeDate">
+                <p class="lastUpdated">last updated:</p>
                 <p>
                   <i class="far fa-calendar-alt"></i
                   ><span id="currentDate">05.05.2021</span>
