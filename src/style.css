@@ -41,7 +41,7 @@ button,
   margin-left: 25px;
 }
 
-.form-control {
+#formInput {
   max-width: 350px;
 }
 
@@ -54,7 +54,7 @@ button,
 }
 
 .cityName {
-  margin: 15px 0;
+  margin: 15px 0 10px;
   font-size: 24px;
 }
 

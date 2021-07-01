@@ -159,6 +159,9 @@ function changeCity(event) {
 let city = document.querySelector("button");
 city.addEventListener("click", changeCity);
 
+let cityInputElement = document.querySelector("#formInput");
+cityInputElement.addEventListener("submit", changeCity);
+
 //Current Location button
 
 function showPositionWeather(position) {
