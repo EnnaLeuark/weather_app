@@ -47,7 +47,6 @@ let apiURL = "https://api.openweathermap.org/data/2.5/weather?q=";
 
 function showWeather(response) {
   //Temperature
-  console.log(response);
   let temperature = Math.round(response.data.main.temp);
   let tempMin = Math.round(response.data.main.temp_min);
   let tempMax = Math.round(response.data.main.temp_max);
@@ -89,7 +88,6 @@ function showWeather(response) {
   let windspeed = Math.round(response.data.wind.speed * 3.6);
   let windElement = document.querySelector("#windspeed");
   windElement.innerHTML = `${windspeed} km/h `;
-  console.log(response);
 
   //convert to Fahrenheit
   let fahrenheitTemp = document.querySelector("#fahrenheitLink");
@@ -139,6 +137,57 @@ function showWeather(response) {
 
   let sunset = document.querySelector("#sunsetTime");
   sunset.innerHTML = formatTime(response.data.sys.sunset * 1000);
+
+  getForecast(response.data.coord);
+}
+
+//weather forecast
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+function showWeatherForecast(response) {
+  console.log(response);
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+      <div class="col-2">
+         <p class="forecastDay">${formatDay(forecastDay.dt)}</p>
+              <img
+                class="forecastIcon"
+                src="http://openweathermap.org/img/wn/${
+                  forecastDay.weather[0].icon
+                }@2x.png"
+                alt="cloudy icon"
+              />
+              <span class="forecast-Temp_min">${Math.round(
+                forecastDay.temp.min
+              )}°</span>/
+              <span class="forecast-Temp_max">${Math.round(
+                forecastDay.temp.max
+              )}°</span>
+            </div>`;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "689f4f9c85431deeb4c8640074154109";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showWeatherForecast);
 }
 
 //current Temperature in Potsdam

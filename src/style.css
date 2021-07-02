@@ -191,6 +191,8 @@ ul {
   display: block;
   text-align: center;
   line-height: 70%;
+  position: relative;
+  top: -50px;
 }
 
 .forecastDay {
