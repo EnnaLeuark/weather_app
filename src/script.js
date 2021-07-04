@@ -89,35 +89,6 @@ function showWeather(response) {
   let windElement = document.querySelector("#windspeed");
   windElement.innerHTML = `${windspeed} km/h `;
 
-  //convert to Fahrenheit
-  let fahrenheitTemp = document.querySelector("#fahrenheitLink");
-  fahrenheitTemp.addEventListener("click", function displayFahrenheitTemp() {
-    let fahrenheitTemperature = Math.round((temperature * 9) / 5 + 32);
-    let displayTemperature = document.querySelector("#degreeTemp");
-    displayTemperature.innerHTML = `${fahrenheitTemperature}°F`;
-    let feelsLike = document.querySelector("#feelsLike");
-    let feelsLikeTemp = Math.round(
-      (response.data.main.feels_like * 9) / 5 + 32
-    );
-    feelsLike.innerHTML = `${feelsLikeTemp} °F`;
-    let wind = document.querySelector("#windspeed");
-    let showWind = Math.round(response.data.wind.speed * 2.237);
-    wind.innerHTML = `${showWind} mph`;
-  });
-
-  //Convert to Celsius
-  let celsiusTemp = document.querySelector("#celsiusLink");
-  celsiusTemp.addEventListener("click", function displayCelsiusTemp() {
-    let displayTemperature = document.querySelector("#degreeTemp");
-    displayTemperature.innerHTML = `${temperature}°C`;
-    let feelsLike = document.querySelector("#feelsLike");
-    let feelsLikeTemp = Math.round(response.data.main.feels_like);
-    feelsLike.innerHTML = `${feelsLikeTemp} °C`;
-    let wind = document.querySelector("#windspeed");
-    let showWind = Math.round(response.data.wind.speed * 3.6);
-    wind.innerHTML = `${showWind} km/h`;
-  });
-
   // time of sunrise and sunset
   function formatTime(timestamp) {
     let time = new Date(timestamp);
