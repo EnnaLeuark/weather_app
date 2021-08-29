@@ -3,10 +3,10 @@
   border: thick double teal;
   margin: 30px auto 5px;
   border-radius: 30px;
-  background: radial-gradient(
-    circle at 10% 20%,
-    rgb(161, 255, 206) 0%,
-    rgb(250, 255, 209) 90%
+  background: linear-gradient(
+    181.2deg,
+    rgb(181, 239, 249) 10.5%,
+    rgb(254, 254, 254) 86.8%
   );
   max-width: 800px;
 }
